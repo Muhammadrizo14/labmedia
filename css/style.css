@@ -1,0 +1,281 @@
+:root {
+    --light: #F7F7F7;
+    --primary: #0CB4F1;
+    --dark: #ACACAC;
+    --darken: #9EAAB4;
+    --max-width-main: 1720px;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter-Regular.ttf);
+    font-style: normal;
+    font-weight: 500;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+body {
+    position: relative;
+    font-size: 1.6rem;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: var(--light);
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.6rem;
+}
+
+.container {
+    width: var(--max-width-main);
+}
+
+.app-title {
+    padding-top: 12px;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+}
+
+.app-search {
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+    box-shadow: 0px 18px 15px rgba(148, 148, 148, 0.15);
+    border-radius: 7px;
+}
+
+.app-search-input {
+    display: flex;
+    align-items: center;
+    background: #ECEFF0;
+    border-radius: 4px;
+    padding: 0.3rem 0.5rem;
+    height: 3.4rem;
+    color: var(--darken);
+}
+
+.app-search-input button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.app-search-input input {
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.app-search-input input::-moz-placeholder {
+    color: #9EAAB4;
+}
+
+.app-search-input input::placeholder {
+    color: #9EAAB4;
+}
+
+.app-clean {
+    display: none;
+    align-items: center;
+    margin-top: 2.4rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.app-clean.active {
+    display: flex;
+}
+
+.app-clean img {
+    margin-right: 0.4rem;
+}
+
+.app-sorting {
+    display: flex;
+    margin-top: 7rem;
+    color: var(--darken);
+    font-size: 1.4rem;
+    margin-bottom: 1.6rem;
+}
+
+.app-sorting button {
+    margin-left: 0.8rem;
+    cursor: pointer;
+    border-bottom: 1px dashed #333333;
+    color: var(--darken);
+    font-size: 1.4rem;
+}
+
+.app-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: var(--darken);
+    background: #FFFFFF;
+}
+
+.app-table-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-table-row,
+.app-table-header {
+    display: flex;
+    padding: 1.6rem;
+    border: 1px solid #F7F7F7;
+}
+
+.app-table-row p,
+.app-table-header p {
+    width: 24%;
+    font-size: 1.4rem;
+}
+
+.app-table-row p:first-child {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.app-table-row button {
+    cursor: pointer;
+}
+
+.app-table-pagging {
+    display: flex;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.app-table-pagging button {
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    color: var(--darken);
+}
+
+.app-table-pagging button.active {
+    color: var(--primary);
+}
+
+.app-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(1px);
+}
+
+.app-modal.active {
+    display: flex;
+}
+
+.app-modal-content {
+    background: #FFFFFF;
+    border-radius: 8px;
+    max-width: 353px;
+    padding: 3.6rem;
+    font-size: 1.4rem;
+    box-shadow: 0px 0px 7px rgba(148, 148, 148, 0.3);
+}
+
+.loading {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.loading div {
+    margin-left: 15px;
+}
+
+
+
+.app-modal-content p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 15px;
+    color: #000;
+}
+
+.app-modal-buttons {
+    margin-top: 2.4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.app-modal-buttons button:first-child {
+    margin-right: 36px;
+}
+
+.app-modal-buttons button {
+    padding: 0.6rem 3.6rem;
+    border-radius: 3px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.app-modal-buttons button.delete {
+    background-color: #E0E0E0;
+    color: var(--dark);
+}
+
+.app-modal-buttons button.close {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+@media (max-width: 1920px) {
+    :root {
+        --max-width-main: 1280px;
+    }
+}
+
+@media (max-width: 1440px) {
+    :root {
+        --max-width-main: 1080px;
+    }
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --max-width-main: 850px;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --max-width-main: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --max-width-main: 100%;
+    }
+}
